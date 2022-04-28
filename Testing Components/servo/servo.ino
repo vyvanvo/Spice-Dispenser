@@ -1,11 +1,11 @@
 //Servo
 #include <Servo.h>
 
-short servo_pin1 = 23;
-short servo_pin2 = 25;
-short servo_pin3 = 27;
+short servo_pin1 = 7;
+short servo_pin2 = 6;
+short servo_pin3 = 5;
 
-int servo_pos = 180;
+int servo_pos = 100;
 Servo servo1;
 Servo servo2;
 Servo servo3;
@@ -24,15 +24,16 @@ void loop() {
 
   // changing angle of servo
   //wait for input in the monitor
-  Serial.println("What angle for the Servo?");
+  /*Serial.println("What angle for the Servo?");
   while (!Serial.available()) {
 
   }
+  */
 
-  servo_pos = Serial.parseInt();
+  //servo_pos = Serial.parseInt();
 
-  Serial.print("Angle: ");
-  Serial.println(servo_pos);
+  //Serial.print("Angle: ");
+  //Serial.println(servo_pos);
   
   servo1.write(servo_pos); //change postion of servo
   servo2.write(servo_pos);

@@ -3,7 +3,7 @@
 //use buttons as arrow keys to select a spice (indicated by leds)
 
 //connect to led pins (output to show which spice is selected)
-const int spice2 = 26, spice1 = 24, spice0 = 22;
+const int bled2 = 26, bled1 = 24, bled0 = 22;
 unsigned char spice = 0x04;
 
 //connect to button (arrow key inputs)
@@ -87,19 +87,19 @@ void SelectSpiceSM_Tick() {
   }
 
   if (spice == 0x04) {
-    digitalWrite(spice2, HIGH);
-    digitalWrite(spice1, LOW);
-    digitalWrite(spice0, LOW);
+    digitalWrite(bled2, HIGH);
+    digitalWrite(bled1, LOW);
+    digitalWrite(bled0, LOW);
   }
   else if (spice == 0x02) {
-    digitalWrite(spice2, LOW);
-    digitalWrite(spice1, HIGH);
-    digitalWrite(spice0, LOW);
+    digitalWrite(bled2, LOW);
+    digitalWrite(bled1, HIGH);
+    digitalWrite(bled0, LOW);
   }
   else if (spice == 0x01) {
-    digitalWrite(spice2, LOW);
-    digitalWrite(spice1, LOW);
-    digitalWrite(spice0, HIGH);
+    digitalWrite(bled2, LOW);
+    digitalWrite(bled1, LOW);
+    digitalWrite(bled0, HIGH);
   }
 }
 
@@ -108,18 +108,18 @@ void setup() {
   // put your setup code here, to run once:
   
   //led outputs
-  pinMode(spice2, OUTPUT);
-  pinMode(spice1, OUTPUT);
-  pinMode(spice0, OUTPUT);
+  pinMode(bled2, OUTPUT);
+  pinMode(bled1, OUTPUT);
+  pinMode(bled0, OUTPUT);
 
   //btn inputs
   pinMode(right_btn, INPUT_PULLUP);
   pinMode(left_btn, INPUT_PULLUP);
 
   //initialize led outpus
-  digitalWrite(spice2, HIGH);
-  digitalWrite(spice1, LOW);
-  digitalWrite(spice0, LOW);
+  digitalWrite(bled2, HIGH);
+  digitalWrite(bled1, LOW);
+  digitalWrite(bled0, LOW);
 
   //Serial monitor - (for debugging)
   Serial.begin(9600);
